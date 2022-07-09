@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:40:57 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 16:45:04 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/09 18:37:10 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ size_t	ft_strlen(const char *s);
 	        	
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
      
      	 
+	     
      
       
 	      
