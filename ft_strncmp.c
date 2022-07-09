@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:46:01 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 14:30:53 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/09 18:01:40 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] && s2[i] && (i < n))
