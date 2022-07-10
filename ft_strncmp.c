@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:46:01 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 18:01:40 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 15:48:44 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
