@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:41:00 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 19:43:57 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	int	k;
-	int len_n;
+	size_t	k;
+	size_t	len_n;
 
 	i = 0;
 	k = 0;
 	len_n = 0;
 	while(((char *)needle)[len_n])
 		len_n++;
-	printf("len=%zu\n",len);
 	while (i < len)
 	{
 		if (len_n == k)
