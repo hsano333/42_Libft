@@ -6,11 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:08:21 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/08 22:26:28 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 15:05:34 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c);
+#include "libft.h"
+
+int		ft_isprint(int c)
 {
 	if (c >= 040 && c <= 0176)
 		return (TRUE);

@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:40:57 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 01:07:02 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:52:42 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LIBFT_H
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 //# include <errno.h>
 //# include <fcntl.h>
 //# include <unistd.h>
@@ -52,12 +53,16 @@ size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 	        	
+char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
      
      
-	     
+			 
+		
+      
      	 
       
 	      

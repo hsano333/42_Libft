@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 22:39:39 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:41:00 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

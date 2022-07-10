@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:45:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 18:10:48 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:53:38 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {

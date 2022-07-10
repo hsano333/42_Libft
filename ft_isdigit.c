@@ -6,11 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:57:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/08 22:25:20 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:41:17 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c);
+#include <libft.h>
+
+int		ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (TRUE);

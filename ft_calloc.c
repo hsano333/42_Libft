@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:07:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 02:48:35 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:43:51 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

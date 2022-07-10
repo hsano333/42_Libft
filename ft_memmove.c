@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:22:52 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 00:55:57 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:54:06 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

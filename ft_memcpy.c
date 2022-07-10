@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:19:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 00:59:58 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 15:04:59 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
@@ -16,6 +18,6 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	i = -1;
 	while (i++ < n)
-		dst[i] = src[i];
+		((char *)dst)[i] = ((char *)src)[i];
 	return dst;
 }

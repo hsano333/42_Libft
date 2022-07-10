@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:29:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/08 23:21:46 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:54:15 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

@@ -6,11 +6,12 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:57:37 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 01:06:07 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:42:17 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include "libft.h"
+
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
@@ -24,10 +25,10 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	}
 	while (i < dstsize - 1 && src[i])
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 	if (i > 0 && src[i] == '\0')
 		return (i);
 	while (src[i])

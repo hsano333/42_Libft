@@ -6,9 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:26:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/09 16:40:28 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/10 14:53:46 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
