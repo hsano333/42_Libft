@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:46:01 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 15:48:44 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 21:21:07 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
+	unsigned char *us1;
+	unsigned char *us2;
 
+	us1 = (unsigned char *)s1;
+	us2 = (unsigned char *)s2;
 	i = 0;
 	while (s1[i] && s2[i] && (i < n))
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (us1[i] != us2[i])
+			return (int)(us1[i] - us2[i]);
 		i++;
 	}
 	if (i == n)
 		return (0);
-	return (s1[i] - s2[i]);
+	return (int)(us1[i] - us2[i]);
 }
 //#include <stdio.h>
 //#include <string.h>

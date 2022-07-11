@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:40:57 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 14:30:16 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 22:09:22 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 //# include <string.h>
 # include <unistd.h>
+# include <limits.h>
 //# include <errno.h>
 //# include <fcntl.h>
 
