@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:37:44 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:54:29 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 17:47:24 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strchr(const char *s, int c)
 			return (char *)(s);
 		s++;
 	}
+	if (c == '\0')
+		return (char *)(s);
 	return (0);
 }
 //#include <stdio.h>
