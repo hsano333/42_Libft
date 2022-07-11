@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:40:57 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 22:58:05 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 14:30:16 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define FT_LIBFT_H
 # include <stdlib.h>
 # include <stdio.h>
-# include <string.h>
+//# include <string.h>
+# include <unistd.h>
 //# include <errno.h>
 //# include <fcntl.h>
-//# include <unistd.h>
 
 //# define SIZE 256
 # define TRUE 1
@@ -63,11 +63,16 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
      
 			 
-		
-      
-     	 
-      
-	      
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 	      
 #endif
+

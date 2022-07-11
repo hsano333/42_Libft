@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:45:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:53:38 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 17:39:55 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
-
+	if (n == 0)
+		return (0);
+	else if (s1 == NULL && s2 == NULL)
+		return (0);
 	i = 0;
 	while (i < n)
 	{
-		if (((char*)s1)[i] != ((char*)s2)[i])
-			return (((char*)s1)[i] - ((char*)s2)[i]);
+		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
+			return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
 		i++;
 	}
 	return (0);

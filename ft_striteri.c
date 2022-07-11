@@ -6,8 +6,16 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 14:54:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:54:53 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/11 13:20:15 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+   
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	a;
+
+	a = 10;
+	f(a, ((char *)s));
+}
