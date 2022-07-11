@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:42:24 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:00:22 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:16:50 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		ft_atoi(const char *str)
 	{
 		old = sum;
 		sum += (p[0] - 0x30) * a;
-		if (old > sum)
+		if (old > sum || sum > LONG_MAX)
 			return (-1);
 	}
 	else
