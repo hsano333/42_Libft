@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:14:02 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 13:18:07 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:57:07 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	a;
-	char	c;
-	char	*p;
+	char			c;
+	char			*p;
 
 	a = 10;
 	c = (f(a, *((char *)s)));

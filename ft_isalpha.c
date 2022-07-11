@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:36:40 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:55:59 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:59:08 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (TRUE);

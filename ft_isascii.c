@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:01:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 14:56:15 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 01:02:02 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 0177)
 		return (TRUE);

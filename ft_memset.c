@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:29:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 15:48:28 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:58:23 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 		((char *)b)[i++] = c;
-	return b;
+	return (b);
 }

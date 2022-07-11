@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:55:56 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 19:34:39 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:52:44 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
-
 	s += i;
 	i += 1;
 	while (i--)
 	{
 		if (*s == (char)c)
-			return (char *)(s);
+			return ((char *)s);
 		s--;
 	}
 	return (0);

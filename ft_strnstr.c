@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 19:43:57 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 01:03:07 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	k = 0;
 	len_n = 0;
-	while(((char *)needle)[len_n])
+	while (((char *)needle)[len_n])
 		len_n++;
 	while (i < len)
 	{
 		if (len_n == k)
-			return &(((char *)haystack)[i-len_n]);
+			return (&(((char *)haystack)[i - len_n]));
 		else if (haystack[i] == needle[k])
 			k++;
 		else
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	if (len_n == k)
-		return &(((char *)haystack)[i-len_n]);
+		return (&(((char *)haystack)[i - len_n]));
 	return (0);
 }
 //#include <stdio.h>

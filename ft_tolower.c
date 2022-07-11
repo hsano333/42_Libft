@@ -6,15 +6,15 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 01:44:28 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 16:52:10 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 00:51:49 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c - 'A' + 'a');
-	return c;
+	return (c);
 }

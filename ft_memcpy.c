@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:19:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 17:00:17 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 01:01:35 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void restrict *dst, const void restrict *src, size_t n)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	return dst;
+	return (dst);
 }
 //#include <stdio.h>
 //#include <string.h>
