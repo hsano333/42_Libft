@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 16:57:17 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/10 17:16:29 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 03:08:32 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	p = malloc(s1_len + s2_len);
+	if (!p)
+		return (NULL);
 	while (i < s1_len)
 	{
 		p[i] = s1[i];
