@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 16:23:43 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 03:52:06 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,58 @@
 
 size_t	ft_strlen(const char *s);
 
-size_t	count_word(char *s1, char *set, size_t k)
+size_t	count_word(char *s1, char *set, size_t k, size_t last)
 {
 	size_t	count;
 	size_t	i;
 	size_t	j;
 	size_t	len;
-	size_t	tmp;
+	//size_t	tmp;
 
 	count = 0;
 	i = k;
 	j = 0;
-	tmp = 0;
+	//tmp = 0;
 	len = ft_strlen(set);
-	if (len == 0)
-		return (0);
-	while (s1[i])
+	printf("strt i=%zu,last=%zu\n",i,last);
+	while (i <= last)
 	{
-		if (s1[i] <= ' ' || s1[i] >= 0x7f)
-			tmp++;
-		else
+		//if (s1[i] <= ' ' || s1[i] >= 0x7f)
+			//tmp++;
+		//else
+		//{
+			//tmp = 0;
+		if (s1[i] == set[j])
+			j++;
+		else if (j > 0)
+			j = 0;
+		if (len == j)
 		{
-			i+= tmp;
-			tmp = 0;
-			if (len == j)
-			{
-				count++;
-				j = 0;
-			}
-			if (s1[i] == set[j])
-				j++;
-			else if (j > 0)
-				j = 0;
+			count++;
+			j = 0;
 		}
+		//}
 		i++;
 	}
-	return (i - k - tmp);
+	return (i - k - count * len);
 }
 
 char	*get_p(char *s1, char *set, size_t *len, size_t *k)
 {
-	//size_t	count;
-	//size_t	size;
 	char	*p;
+	size_t	last;
 
-	//*len = ft_strlen(set);
 	*k = 0;
+	last = ft_strlen(s1);
 	while ((s1[*k] <= ' ' || s1[*k] >= 0x7f) && s1[*k] != '\0')
 		(*k)++;
-	printf("k=%zu\n", *k);
-	*len = count_word(s1, set, *k);
-	printf("count=%zu\n",*len);
-	//size = ft_strlen(s1) - ft_strlen(set) * (*len);
+	while ((s1[last] <= ' ' || s1[last] >= 0x7f) && last > *k)
+		last--;
+	*len = count_word(s1, set, *k, last);
+	printf("len=%zu\n",*len);
 	p = malloc(*len + 1);
+	if (!p)
+		return (NULL);
 	p[*len] = '\0';
 	(*k)--;
 	return (p);
@@ -95,28 +94,28 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	k;
 	size_t	len;
 
-	printf("test No.1 \n");
+	if (s1 == NULL)
+		return (NULL);
 	p = get_p((char *)s1, (char *)set, &len, &k);
-	printf("test No.2 \n");
+	if (!p)
+		return (NULL);
 	i = 0;
 	j = 0;
+	if (len == 0 || p == NULL)
+		return (p);
+	len--;
 	while (i < len)
 	{
 		k++;
-		//printf("test No.2 i=%zu,k=%zu\n",i,k);
 		if (s1[k] == set[j])
 			j++;
 		else
 		{
-			//printf("test No.3 i=%zu,k=%zu,j=%zu\n",i,k,j);
 			i += write_not_match(p, i, &j, (char *)set);
-			//printf("test No.3-2 i=%zu,k=%zu\n",i,k);
 			p[i++] = s1[k];
 		}
-		//printf("test No.4 i=%zu,k=%zu\n",i,k);
 		if (ft_strlen(set) == j)
 			j = 0;
-		//printf("test No.5 i=%zu,k=%zu\n",i,k);
 	}
 	write_not_match(p, i, &j, (char *)set);
 	return (p);
@@ -127,7 +126,7 @@ int main(int argc, char **argv)
 	char *p;
 	if (argc == 3)
 	{
-		char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+		char	*s1 = "  \t \t \n   \n\n\n\t";
 		char	*s3 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
 		char	*s2 = " \n\t";
 		p = ft_strtrim(argv[1],argv[2]);
