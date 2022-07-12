@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:36:40 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:59:08 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 03:57:21 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if ('a' <= c && c <= 'z')
 		return (TRUE);
-	else if (c >= 'A' && c <= 'Z')
+	else if ('A' <= c && c <= 'Z')
 		return (TRUE);
 	return (FALSE);
 }
