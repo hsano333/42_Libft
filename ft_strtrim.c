@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 13:21:57 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:52:13 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,17 @@ void	init_argv(size_t *i, size_t *j, size_t *k)
 	*k = (size_t) - 1;
 }
 
-size_t	clear_j(size_t j, size_t len)
+size_t	write_mistake(char *p, size_t i, size_t j, char *set)
 {
-	if (len == j)
-		j = 0;
-	return (j);
+	int	cnt;
+
+	cnt = 0;
+	while (j--)
+	{
+		p[i + j] = set[j];
+		cnt++;
+	}
+	return (cnt);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -88,33 +94,31 @@ char	*ft_strtrim(char const *s1, char const *set)
 			j++;
 		else
 		{
-			i += j;
-			while (j--)
-				p[i - j - 1] = set[j];
+			i += write_mistake(p, i, j, (char *)set);
 			p[i++] = s1[k];
 			j = 0;
 		}
-		j = clear_j(j, len);
+		if (len == j)
+			j = 0;
 	}
-	while (j--)
-		p[i + j] = set[j];
+	write_mistake(p, i, j, (char *)set);
 	return (p);
 }
-int main(int argc, char **argv)
-{
-
-	char *p;
-	if (argc == 3)
-	{
-		char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-		char	*s2 = " \n\t";
-		p = ft_strtrim(argv[1],argv[2]);
-		printf("input1=%s,input2=%s\n",argv[1],argv[2]);
-		printf("output=%s:end\n",p);
-		p = ft_strtrim(s1,s2);
-		printf("input1=%s,input2=%s\n",s1,s2);
-		printf("output=%s:end\n",p);
-
-	}
-	return (0);
-}
+//int main(int argc, char **argv)
+//{
+//
+//	char *p;
+//	if (argc == 3)
+//	{
+//		char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+//		char	*s2 = " \n\t";
+//		p = ft_strtrim(argv[1],argv[2]);
+//		printf("input1=%s,input2=%s\n",argv[1],argv[2]);
+//		printf("output=%s:end\n",p);
+//		p = ft_strtrim(s1,s2);
+//		printf("input1=%s,input2=%s\n",s1,s2);
+//		printf("output=%s:end\n",p);
+//
+//	}
+//	return (0);
+//}
