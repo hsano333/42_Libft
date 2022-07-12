@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 03:52:06 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 04:07:00 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*get_p(char *s1, char *set, size_t *len, size_t *k)
 
 size_t	write_not_match(char *p, size_t i, size_t *j, char *set)
 {
-	int	cnt;
+	size_t	cnt;
 
 	cnt = 0;
 	while ((*j)--)

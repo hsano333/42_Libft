@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:22:52 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 17:32:42 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 04:09:41 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else if (dst == NULL && src == NULL)
 		return (NULL);
 	if (src >= dst || src + len <= dst)
-	{
-		i = (size_t) - 1;
-		while (++i < len)
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-	}
+		ft_memcpy(dst, src, len);
 	else
 	{
 		i = len;

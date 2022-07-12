@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 01:07:54 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 04:01:43 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 04:16:36 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 		j++;
 	}
+	dst[i] = '\0';
 	while (src[j])
 		j++;
-	dst[i] = '\0';
 	return (d + j);
 }

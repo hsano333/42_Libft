@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I ${HEAD}
 NAME 	= libft.a
 PRE		= ./
 HEAD	= ./
@@ -15,9 +15,6 @@ all:	${NAME}
 
 ${NAME}	:	${OBJS}
 			ar rcs ${NAME} ${OBJS}
-
-.c.o:
-			${CC} ${CFLAGS} -I ${HEAD} -c $^ -o $@
 
 clean	:
 			${RM} ${OBJS}
