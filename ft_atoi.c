@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:42:24 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 15:01:44 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 15:04:35 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ unsigned long	ft_iterative_power(long nb, long power)
 
 int	ft_atoi(const char *str)
 {
-	int		minus;
-	size_t		len;
-	size_t		i;
+	int				minus;
+	size_t			len;
+	size_t			i;
 	unsigned long	sum;
 	unsigned long	a;
 
@@ -120,27 +120,27 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(sum * minus));
 }
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-int main(int argc,char **argv)
-{
-	char *s1;
-	int len;
-	int	result;
-
-	result = 0;
-	printf("LONGMAX=%ld\n",LONG_MAX);
-	if (argc == 2)
-	{
-		s1 = argv[1];
-		//s1 = "\t\v\f\r\n \f-06050";
-		len = atoi(s1);
-		result = ft_atoi(s1);
-		printf("input:%s\n",s1);
-		printf("my:%d\n",result);
-		printf("test:%d\n",len);
-
-	}
-	return (0);
-}
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//int main(int argc,char **argv)
+//{
+//	char *s1;
+//	int len;
+//	int	result;
+//
+//	result = 0;
+//	printf("LONGMAX=%ld\n",LONG_MAX);
+//	if (argc == 2)
+//	{
+//		s1 = argv[1];
+//		//s1 = "\t\v\f\r\n \f-06050";
+//		len = atoi(s1);
+//		result = ft_atoi(s1);
+//		printf("input:%s\n",s1);
+//		printf("my:%d\n",result);
+//		printf("test:%d\n",len);
+//
+//	}
+//	return (0);
+//}
