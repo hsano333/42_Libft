@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 15:08:27 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 16:07:17 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	if (len_n == k)
 		return (&(((char *)haystack)[i - len_n]));
-	return (0);
+	return (NULL);
 }
 //#include <stdio.h>
 //#include <string.h>
