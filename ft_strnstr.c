@@ -6,27 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 06:08:13 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 06:18:30 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	is_equal(const char *str, const char *needle)
-{
-	size_t	i;
-
-	i = 0;
-	while (needle[i] && str[i])
-	{
-		if (str[i] != needle[i])
-			return (FALSE);
-		i++;
-	}
-	if (needle[i] == str[i])
-		return (TRUE);
-	return (FALSE);
-}
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -43,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	if (len_n > last)
 		return (NULL);
-	while (i++ <= len - len_n)
+	while (++i <= len - len_n)
 	{
 		if (haystack[i] == needle[0])
 		{
