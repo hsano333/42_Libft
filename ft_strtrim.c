@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 04:07:00 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 15:11:24 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,25 +120,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	write_not_match(p, i, &j, (char *)set);
 	return (p);
 }
-int main(int argc, char **argv)
-{
-
-	char *p;
-	if (argc == 3)
-	{
-		char	*s1 = "  \t \t \n   \n\n\n\t";
-		char	*s3 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
-		char	*s2 = " \n\t";
-		p = ft_strtrim(argv[1],argv[2]);
-		//printf("input1=%s,input2=%s\n",argv[1],argv[2]);
-		printf("test1:output=%s:end\n",p);
-		
-		p = ft_strtrim(s1,s2);
-		//printf("input1=%s,input2=%s\n",s1,s2);
-		printf("test2:output=%s:end\n",p);
-		p = ft_strtrim(s3,s2);
-		printf("test3:output=%s:end\n",p);
-
-	}
-	return (0);
-}
+//int main(int argc, char **argv)
+//{
+//
+//	char *p;
+//	if (argc == 3)
+//	{
+//		char	*s1 = "  \t \t \n   \n\n\n\t";
+//		char	*s3 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
+//		char	*s2 = " \n\t";
+//		p = ft_strtrim(argv[1],argv[2]);
+//		//printf("input1=%s,input2=%s\n",argv[1],argv[2]);
+//		printf("test1:output=%s:end\n",p);
+//		
+//		p = ft_strtrim(s1,s2);
+//		//printf("input1=%s,input2=%s\n",s1,s2);
+//		printf("test2:output=%s:end\n",p);
+//		p = ft_strtrim(s3,s2);
+//		printf("test3:output=%s:end\n",p);
+//
+//	}
+//	return (0);
+//}
