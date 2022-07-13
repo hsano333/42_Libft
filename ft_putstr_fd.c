@@ -6,11 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:23:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/11 14:05:49 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 21:46:42 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

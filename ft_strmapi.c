@@ -6,11 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:14:02 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:57:07 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 21:46:47 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

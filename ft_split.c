@@ -6,11 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:58:17 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 01:00:17 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 21:46:45 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	**ft_split(char const *s, char c)
 {

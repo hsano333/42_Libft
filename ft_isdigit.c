@@ -6,11 +6,11 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:57:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 03:58:42 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/13 21:46:39 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 16:55:01 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 05:07:32 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
-size_t	count_word(const char *s1, const char *set, size_t k, size_t last)
+size_t	count_word(const char *s1, const char *set, size_t begin, size_t last)
 {
 	size_t	count;
 	size_t	i;
@@ -24,7 +25,7 @@ size_t	count_word(const char *s1, const char *set, size_t k, size_t last)
 	size_t	len;
 
 	count = 0;
-	i = k - 1;
+	i = begin - 1;
 	j = 0;
 	len = ft_strlen(set);
 	while (++i <= last)
@@ -42,63 +43,43 @@ size_t	count_word(const char *s1, const char *set, size_t k, size_t last)
 			j = 0;
 		}
 	}
-	return (i - k - count * len);
+	return (i - begin - count * len);
 }
 
-size_t	check_last_word(const char *s1, const char *set, size_t last)
+void	get_index(const char *s1, const char *set, size_t *begin, size_t *last)
 {
-	size_t	len;
-	size_t	diff;
-	size_t	i;
+	size_t	set_len;
+	char	*tmp_p;
 
-	diff = 0;
-	len = ft_strlen(set);
-
-	i = last - len;
-	if(!ft_strncmp(&(s1[i]), set, len))
+	while ((s1[*begin] <= ' ' || s1[*begin] >= 0x7f) && s1[*begin] != '\0')
+		(*begin)++;
+	while ((s1[*last] <= ' ' || s1[*last] >= 0x7f) && *last > *begin)
+		(*last)--;
+	set_len = ft_strlen(set);
+	tmp_p = ft_strnstr(&(s1[*begin]), set, set_len);
+	while (tmp_p != NULL && tmp_p == &(s1[*begin]))
 	{
-		while ((s1[i] <= ' ' || s1[i] >= 0x7f) && last > 0)
-		{
-			i--;
-			diff++;
-		}
+		*begin += set_len;
+		tmp_p = ft_strnstr(&(s1[*begin]), set, set_len);
 	}
-	printf("diff=%zu\n",diff);
-	return (diff);
 }
 
-char	*get_p(const char *s1, const char *set, size_t *len, size_t *k)
+char	*get_p(const char *s1, const char *set, size_t *begin, size_t *last)
 {
 	char	*p;
-	size_t	last;
-	size_t	diff;
+	size_t	len;
 
-	*k = 0;
-	last = ft_strlen(s1);
-	if (s1 == NULL)
-		return (NULL);
-	while ((s1[*k] <= ' ' || s1[*k] >= 0x7f) && s1[*k] != '\0')
-		(*k)++;
-	while ((s1[last] <= ' ' || s1[last] >= 0x7f) && last > *k)
-		last--;
-	*len = count_word(s1, set, *k, last);
-	diff = check_last_word(s1, set, last);
-	*len -= diff;
-	printf("len=%zu\n",*len);
-	/*
-	if (*len == 0)
-		p = malloc(*len + 1);
-	else
-		p = malloc(*len);
-	*/
-	p = malloc(*len + 1);
+	*begin = 0;
+	*last = ft_strlen(s1);
+	get_index(s1, set, begin, last);
+	len = count_word(s1, set, *begin, *last);
+	p = malloc(len + 1);
 	if (p == NULL)
 	{
-		*len = 0;
+		*begin = *last;
 		return (NULL);
 	}
-	p[*len] = '\0';
-	(*k)--;
+	p[len] = '\0';
 	return (p);
 }
 
@@ -116,116 +97,55 @@ size_t	write_not_match(char *p, size_t i, size_t *j, char *set)
 	return (cnt);
 }
 
-//char	*trim(char *p, char const *s1, char const *set, size_t len)
-/*
-char	*trim(char const *s1, char const *set, size_t s1_len, size_t set_len)
-{
-	char	*p;
-	char	*tmp;
-	size_t	i;
-	size_t	j;
-
-	p = malloc(s1_len);
-	if (!p)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while ((s1[i] <= ' ' || 0x7f <= s1[i]) && s1[i] != '\0')
-		i++;
-	while (i < s1_len)
-	{
-		tmp = ft_strnstr(&(s1[i]), set, s1_len - i);
-		if (tmp == NULL)
-			break ;
-		while (tmp != NULL and &(s1[i]) == &(tmp[0]))
-			p[j++] = s1[i++];
-		i += set_len;
-	}
-	return (p);
-
-	i = 0;
-	j = 0;
-	while (i < (len - 1))
-	{
-		k++;
-		if (s1[k] == set[j])
-			j++;
-		else
-		{
-			i += write_not_match(p, i, &j, (char *)set);
-			p[i++] = s1[k];
-		}
-		if (ft_strlen(set) == j)
-			j = 0;
-	}
-	write_not_match(p, i, &j, (char *)set);
-
-}
-*/
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	/*
-	char	*t;
-	char	*s;
-	size_t	s1_len;
-	size_t	set_len;
-
-	s1_len = ft_strlen(s1);
-	set_len = ft_strlen(set);
-	t = trim(s1, set, s1_len, set_len);
-
-	free(t);
-	*/
 	char	*p;
 	size_t	i;
-	size_t	j;
-	size_t	k;
-	size_t	len;
+	size_t	b;
+	size_t	l;
+	char	*tmp_p;
 
-	p = get_p(s1, set, &len, &k);
-	if (len == 0)
+	if (s1 == NULL)
+		return (NULL);
+	p = get_p(s1, set, &b, &l);
+	if (l == b || p == NULL)
 		return (p);
-	//trim(p, s1, set, len);
 	i = 0;
-	j = 0;
-	while (i < (len - 1))
+	tmp_p = ft_strnstr(&(s1[b]), set, l - b + 1);
+	while (tmp_p != NULL)
 	{
-		k++;
-		if (s1[k] == set[j])
-			j++;
-		else
-		{
-			i += write_not_match(p, i, &j, (char *)set);
-			p[i++] = s1[k];
-		}
-		if (ft_strlen(set) == j)
-			j = 0;
+		while (&(s1[b]) != tmp_p)
+			p[i++] = s1[b++];
+		b += ft_strlen(set);
+		tmp_p = ft_strnstr(&(s1[b]), set, l - b + 1);
 	}
-	printf("i=%zu,k=%zu\n",i,k);
-	write_not_match(p, i, &j, (char *)set);
+	while (b <= l)
+		p[i++] = s1[b++];
 	return (p);
 }
-
-int main(int argc, char **argv)
-{
-
-	char *p;
-	if (argc == 3)
-	{
-		char	*s1 = "  \t \t \n   \n\n\n\t";
-		char	*s3 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
-		char	*s2 = " \n\t";
-		p = ft_strtrim(argv[1],argv[2]);
-		//printf("input1=%s,input2=%s\n",argv[1],argv[2]);
-		printf("test1:output=%s:end\n",p);
-		
-		p = ft_strtrim(s1,s2);
-		//printf("input1=%s,input2=%s\n",s1,s2);
-		printf("test2:output=%s:end\n",p);
-		p = ft_strtrim(s3,s2);
-		printf("test3:output=%s:end\n",p);
-
-	}
-	return (0);
-}
+//int main(int argc, char **argv)
+//{
+//
+//	char *p;
+//	if (argc == 3)
+//	{
+//		/*
+//		char	*s1 = "  \t \t \n   \n\n\n\t";
+//		char	*s3 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !";
+//		char	*s2 = " \n\t";
+//		*/
+//		p = ft_strtrim(argv[1],argv[2]);
+//		//printf("input1=%s,input2=%s\n",argv[1],argv[2]);
+//		printf("test1:output=%s:end\n",p);
+//		
+//		/*
+//		p = ft_strtrim(s1,s2);
+//		//printf("input1=%s,input2=%s\n",s1,s2);
+//		printf("test2:output=%s:end\n",p);
+//		p = ft_strtrim(s3,s2);
+//		printf("test3:output=%s:end\n",p);
+//		*/
+//
+//	}
+//	return (0);
+//}
