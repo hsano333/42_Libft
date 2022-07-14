@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 20:20:31 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 22:55:54 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
-static size_t	count_word(const char *s1, const char *set, size_t begin, size_t last)
+static size_t	count_word(const char *s1, \
+	   	const char *set, size_t begin, size_t last)
 {
 	size_t	count;
 	size_t	i;
@@ -46,7 +47,8 @@ static size_t	count_word(const char *s1, const char *set, size_t begin, size_t l
 	return (i - begin - count * len);
 }
 
-static void	get_index(const char *s1, const char *set, size_t *begin, size_t *last)
+static void	get_index(const char *s1, \
+	   	const char *set, size_t *begin, size_t *last)
 {
 	size_t	set_len;
 	char	*tmp_p;
