@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:58:17 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 15:59:50 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 16:29:13 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,32 +79,44 @@ char	**ft_split(char const *s, char c)
 	char	**p;
 	size_t	cnt;
 
+	if (s == NULL)
+		return (NULL);
 	cnt = count_c(s, c);
 	p = (char **)malloc(sizeof(char *) * (cnt + 1));
+	if
 	p[cnt] = NULL;
 	p = make_array(p, s, (int)c, cnt);
 	return (p);
 }
-//int main(int argc, char **argv)
-//{
-//
-//	char **p;
-//	char c;
-//	size_t	size;
-//	size_t i;
-//
-//	i = 0;
-//	if (argc == 4)
-//	{
-//		c = argv[2][0];
-//		p = ft_split(argv[1],c);
-//		size = atoi(argv[3]);
-//		while(i < size)
-//		{
-//			printf("p[%zu]=%s\n",i,p[i]);
-//			i++;
-//		}
-//
-//	}
-//	return (0);
-//}
+int main(int argc, char **argv)
+{
+
+	char **p;
+	char c;
+	size_t	size;
+	size_t i;
+
+	i = 0;
+	if (argc == 4)
+	{
+		c = argv[2][0];
+		p = ft_split(argv[1],c);
+		size = atoi(argv[3]);
+		while(i < size)
+		{
+			printf("p[%zu]=%s\n",i,p[i]);
+			i++;
+		}
+
+	}
+	char *tmp = "\0aa\0bbb";
+	printf("test No.2:%s:end\n",tmp);
+	char	**expected = ft_split("\0aa\0bbb", '\0');
+	i = 0;
+	while(i < size)
+	{
+		printf("e[%zu]=%s\n",i,expected[i]);
+		i++;
+	}
+	return (0);
+}
