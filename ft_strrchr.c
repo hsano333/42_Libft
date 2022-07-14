@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:55:56 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:52:44 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 20:48:47 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
+	i = ft_strlen(s);
 	s += i;
 	i += 1;
 	while (i--)

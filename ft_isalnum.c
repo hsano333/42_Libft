@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:59:02 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 04:56:56 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 19:01:08 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isdigit(c))
-		return (TRUE);
+		return (true);
 	else if (ft_isalpha(c))
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

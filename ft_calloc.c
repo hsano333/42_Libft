@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:07:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 04:58:16 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 21:20:38 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t				max;
-	char				*c;
-	size_t				i;
-	unsigned long long	*p;
+	size_t	max;
+	char	*p;
 
 	max = count * size;
-	p = (unsigned long long *)malloc(max);
-	c = (char *)p;
-	i = max / (sizeof(unsigned long long) / sizeof(char));
-	if (p == NULL)
+	p = (char *)malloc(max);
+	if (!p)
 		return (NULL);
-	while (i--)
-		p[i] = 0;
-	c = (char *)p;
-	i = sizeof(unsigned long long);
-	while (i--)
-		c[max - i] = 0;
-	return ((void *)c);
+	ft_bzero(p, max);
+	return ((void *)p);
 }
 //#include <stdio.h>
 //#include <time.h>

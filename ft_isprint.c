@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:08:21 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 16:00:51 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 19:00:35 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isprint(int c)
 {
 	if (' ' <= c && c <= 0x7E)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

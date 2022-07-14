@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 00:57:37 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 04:13:29 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 20:47:27 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	if (dstsize == 0)
-	{
-		while (src[i])
-			i++;
-		return (i);
-	}
+		return (ft_strlen(src));
 	while (i < dstsize - 1 && src[i])
 	{
 		dst[i] = src[i];

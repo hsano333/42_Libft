@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 21:57:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 21:46:39 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 19:00:32 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isdigit(int c)
 {
 	if ('0' <= c && c <= '9')
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

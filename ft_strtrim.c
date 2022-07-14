@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 05:07:32 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 20:20:31 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
-size_t	count_word(const char *s1, const char *set, size_t begin, size_t last)
+static size_t	count_word(const char *s1, const char *set, size_t begin, size_t last)
 {
 	size_t	count;
 	size_t	i;
@@ -46,7 +46,7 @@ size_t	count_word(const char *s1, const char *set, size_t begin, size_t last)
 	return (i - begin - count * len);
 }
 
-void	get_index(const char *s1, const char *set, size_t *begin, size_t *last)
+static void	get_index(const char *s1, const char *set, size_t *begin, size_t *last)
 {
 	size_t	set_len;
 	char	*tmp_p;
@@ -64,7 +64,7 @@ void	get_index(const char *s1, const char *set, size_t *begin, size_t *last)
 	}
 }
 
-char	*get_p(const char *s1, const char *set, size_t *begin, size_t *last)
+static char	*get_p(const char *s1, const char *set, size_t *begin, size_t *last)
 {
 	char	*p;
 	size_t	len;
@@ -81,20 +81,6 @@ char	*get_p(const char *s1, const char *set, size_t *begin, size_t *last)
 	}
 	p[len] = '\0';
 	return (p);
-}
-
-size_t	write_not_match(char *p, size_t i, size_t *j, char *set)
-{
-	size_t	cnt;
-
-	cnt = 0;
-	while ((*j)--)
-	{
-		p[i + *j] = set[*j];
-		cnt++;
-	}
-	*j = 0;
-	return (cnt);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:01:53 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 04:03:29 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 21:19:41 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,24 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	//size_t	size;
 
-	i = 0;
-	while (i < n)
-		((unsigned char *)s)[i++] = 0;
+	i = n / (sizeof(unsigned long long) / sizeof(char));
+	if (i > 0)
+	{
+		while (i--)
+			((unsigned long long*)s)[i] = 0;
+	}
+	i = sizeof(unsigned long long);
+	if (n >= i)
+	{
+		while (--i)
+			((char *)s)[n - i] = 0;
+	}
+	else
+	{
+		while (n--)
+			((char *)s)[n] = 0;
+	}
+
 }

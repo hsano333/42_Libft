@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:42:24 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/13 15:04:35 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/14 20:57:43 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_digit_len(const char *str, size_t i)
+static size_t	get_digit_len(const char *str, size_t i)
 {
 	size_t	len;
 
@@ -27,13 +27,13 @@ size_t	get_digit_len(const char *str, size_t i)
 	return (len - i);
 }
 
-size_t	get_start_index(const char *str, int *minus)
+static size_t	get_start_index(const char *str, int *minus)
 {
 	size_t	i;
 
 	i = 0;
 	*minus = 1;
-	while (TRUE)
+	while (true)
 	{
 		if (str[i] == ' ' || (0x09 <= str[i] && str[i] <= 0x0D))
 			i++;
@@ -52,25 +52,7 @@ size_t	get_start_index(const char *str, int *minus)
 	return (i);
 }
 
-int	last_check(char *p, unsigned long sum, unsigned long a)
-{
-	unsigned long	old;
-
-	if (p[0] == '-')
-		sum *= -1;
-	else if ('0' <= p[0] && p[0] <= '9')
-	{
-		old = sum;
-		sum += (p[0] - 0x30) * a;
-		if (old > sum || sum > LONG_MAX)
-			return (-1);
-	}
-	else
-		return (0);
-	return (sum);
-}
-
-unsigned long	ft_iterative_power(long nb, long power)
+static unsigned long	ft_iterative_power(long nb, long power)
 {
 	long	rval;
 	long	old;
