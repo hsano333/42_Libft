@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 23:51:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 00:11:49 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 00:12:38 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_itoa_no_memory(int n, char *p, char *r)
 	{
 		r[0] = '0';
 		r[1] = '\0';
-		return (r);
+		return ;
 	}
 	cnt = get_count(p, n);
 	r[cnt] = '\0';
@@ -57,7 +57,6 @@ void	ft_itoa_no_memory(int n, char *p, char *r)
 		r[i] = p[cnt - i - 1];
 		i++;
 	}
-	return (r);
 }
 
 void	ft_putnbr_fd(int n, int fd)
