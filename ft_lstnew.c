@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:30:10 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 01:04:14 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 12:49:04 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*tmp;
+	t_list	*lst;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (!content)
+	lst = (t_list *)malloc(sizeof(t_list));
+	if (!lst)
 		return (NULL);
-
-	return (tmp);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

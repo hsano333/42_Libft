@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:34:33 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 01:07:02 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 13:16:32 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,18 @@
 
 int		ft_lstsize(t_list *lst)
 {
-	
-	if (lst->next == NULL)
-		return (1);
-	return (0);
+	size_t	cnt;
+
+	cnt = 0;
+	if (!lst)
+		return ((int)cnt);
+	cnt++;
+	while(lst->next)
+	{
+		cnt++;
+		lst = lst->next;
+	}
+	if (cnt > INT_MAX)
+		return (0);
+	return ((int)cnt);
 }
