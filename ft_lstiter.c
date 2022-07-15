@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:39:23 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 01:10:26 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 17:09:26 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	f(lst->next);
+	if (!f || !lst)
+		return ;
+	f((lst->content));
+	while (lst->next)
+	{
+		lst = lst->next;
+		f((lst->content));
+	}
 }
-
