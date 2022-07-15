@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:13:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 01:03:27 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 04:15:09 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	//while (s[i])
+	while ((*(s++)))
 		i++;
 	return (i);
 }

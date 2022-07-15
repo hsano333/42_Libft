@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:26:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 14:40:52 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 05:47:51 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	unsigned char	*p;
+	unsigned char	tmp;
 
 	i = 0;
+	p = (unsigned char *)s;
+	tmp = (unsigned char)c;
 	while (i < n)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
-			return ((void *)(&(s[i])));
+		if (*(p++) == tmp)
+			return ((void *)&(s[i]));
 		i++;
 	}
 	return (0);

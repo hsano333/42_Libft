@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 02:50:00 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:54:35 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 05:16:21 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ char	*ft_strdup(const char *s1)
 {
 	size_t	size;
 	char	*p;
+	char	*bk;
 
 	size = ft_strlen(s1);
 	p = (char *)malloc(size + 1);
+	bk = p;
 	if (p == NULL)
 		return (NULL);
 	p[size] = '\0';
 	while (size--)
-		p[size] = s1[size];
-	return (p);
+		*(p++) = *(s1++);
+	return (bk);
 }
 //#include <stdio.h>
 //#include <string.h>

@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:29:36 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 03:56:11 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 05:29:34 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	*memset_big_data(void *b, int c, size_t len, size_t i)
 	while (i > 0)
 		tmp = tmp | (unsigned long long)tmp_c << ((i--) * 8);
 	i = 0;
-	while (i < tmp_len)
-		p[i++] = tmp;
-	b = (unsigned char *)p;
-	tmp_len = (len / loop) * loop;
+	while (i++ < tmp_len)
+		*(p++) = tmp;
+	b = (unsigned char *)(p - tmp_len);
+	tmp_len = tmp_len * loop;
 	while (tmp_len < len)
-		((unsigned char *)b)[tmp_len++] = c;
+		((unsigned char *)b)[tmp_len++] = tmp_c;
 	return ((unsigned char *)b);
 }
 
@@ -43,7 +43,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t			i;
 
 	i = 0;
-	if (len > 32)
+	if (len > 128)
 		return (memset_big_data(b, c, len, i));
 	else
 	{
