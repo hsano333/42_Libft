@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:35:37 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 01:07:42 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 13:54:35 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	return lst->next;
+	if (!lst)
+		return (NULL);
+	while(lst->next);
+		lst = lst->next;
+	return (lst);
 }
