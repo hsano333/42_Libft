@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:37:37 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 01:09:27 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 14:50:18 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->next);
+	del(lst->content);
+	//free(lst->content);
 }
