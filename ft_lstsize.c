@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:34:33 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 13:16:32 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/15 17:10:51 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	cnt;
 
@@ -20,7 +20,7 @@ int		ft_lstsize(t_list *lst)
 	if (!lst)
 		return ((int)cnt);
 	cnt++;
-	while(lst->next)
+	while (lst->next)
 	{
 		cnt++;
 		lst = lst->next;
