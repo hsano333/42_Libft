@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:45:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 04:33:05 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 20:46:59 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*s1p;
 	unsigned char	*s2p;
 
 	if (n == 0)
-		return (0);
-	else if (s1 == NULL && s2 == NULL)
 		return (0);
 	i = 0;
 	s1p = (unsigned char *)s1;
@@ -47,7 +45,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 //		s1 = argv[1];
 //		s2 = argv[2];
 //		len = atoi(argv[3]);
-//		result = ft_memcmp(s1,s2,len);
+//		result = ft_memcmp(NULL,NULL,len);
 //		printf("s1=%s,s2=%s,len=%zu\n",s1,s2,len);
 //		printf("result=%d\n",result);
 //		result = memcmp(s1,s2,len);

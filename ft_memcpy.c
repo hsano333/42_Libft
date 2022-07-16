@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 23:19:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 06:00:09 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 18:48:18 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*dst_p;
 	unsigned char	*src_p;
 
@@ -22,11 +22,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (dst);
 	else if (dst == NULL && src == NULL)
 		return (NULL);
-	//i = 0;
 	i = n;
 	dst_p = (unsigned char *)dst;
 	src_p = (unsigned char *)src;
-	//while (i++ < n)
 	while (i--)
 		*(dst_p++) = *(src_p++);
 	return (dst);
@@ -58,10 +56,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 //		if (s4[0] == '\0')
 //			s4 = NULL;
 //		len = atoi(argv[5]);
-//		o1 = ft_memcpy(s1,NULL,len);
-//		o2 = memcpy(NULL,NULL,len);
-//		printf("s1=%s,s2=%s,len=%zu\n",s1,s2,len);
-//		printf("s3=%s,s4=%s,len=%zu\n",s3,s4,len);
+//		printf("my   s1=%s,s2=%s,len=%zu\n",s1,s2,len);
+//		o1 = ft_memcpy(s1,s2,len);
+//		printf("my   result=%s\n",o1);
+//		printf("test s3=%s,s4=%s,len=%zu\n",s3,s4,len);
+//		o2 = memcpy(s3,s4,len);
+//		printf("test   result=%s\n",o2);
 //		printf("my=%s,test=%s\n",o1,o2);
 //
 //	}

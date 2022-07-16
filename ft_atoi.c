@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:42:24 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 04:25:48 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 22:58:04 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int	ft_atoi(const char *str)
 //
 //	result = 0;
 //	printf("LONGMAX=%ld\n",LONG_MAX);
+//	printf("INTMAX=%d\n",INT_MAX);
 //	if (argc == 2)
 //	{
 //		s1 = argv[1];

@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:07:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 21:20:38 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 23:11:02 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	*ft_calloc(size_t count, size_t size)
 //		count = (size_t)atoi(argv[1]);
 //		size = (size_t)atoi(argv[2]);
 //		max = count*size;
+//		printf("max=%zu\n",max);
 //
 //		start_clock1 = clock();
 //		s2= calloc(count,size);
@@ -52,12 +53,27 @@ void	*ft_calloc(size_t count, size_t size)
 //			if(s2[max] != 0)
 //				printf("error s2\n");
 //		}
+//		size_t i;
+//		i = 0;
+//		max = count*size;
+//		while(i <= max)
+//		{
+//			printf("i=%zu,p[%zu]=%d\n",i,i,s2[i]);
+//			i++;
+//		}
 //
 //
 //		start_clock2 = clock();
 //		s1= ft_calloc(count,size);
 //		end_clock2 = clock();
 //		printf("my time:%ld\n",end_clock2-start_clock2);
+//
+//		i = 0;
+//		while(i <= max)
+//		{
+//			printf("i=%zu,p[%zu]=%d\n",i,i,s1[i]);
+//			i++;
+//		}
 //
 //		max = count*size;
 //		while(max--)

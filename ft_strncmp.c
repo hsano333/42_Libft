@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:46:01 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/12 00:58:06 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 19:31:02 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	us1 = (unsigned char *)s1;
 	us2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] && s2[i] && (i < n))
+	while (us1[i] && us2[i] && (i < n))
 	{
 		if (us1[i] != us2[i])
 			return ((int)(us1[i] - us2[i]));
@@ -44,12 +44,40 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 //	{
 //		s1 = argv[1];
 //		s2 = argv[2];
+//		if (s1[0] == '\0')
+//			s1 = NULL;
+//		if (s2[0] == '\0')
+//			s2 = NULL;
 //		len = atoi(argv[3]);
 //		result = ft_strncmp(s1,s2,len);
 //		printf("s1=%s,s2=%s,len=%zu\n",s1,s2,len);
 //		printf("result=%d\n",result);
 //		result = strncmp(s1,s2,len);
 //		printf("result=%d\n",result);
+//
+//	}
+//	else if (argc == 5)
+//	{
+//		s1 = argv[1];
+//		s2 = argv[2];
+//		if (s1[0] == '\0')
+//			s1 = NULL;
+//		if (s2[0] == '\0')
+//			s2 = NULL;
+//		len = atoi(argv[3]);
+//
+//		printf("s1=%s,s2=%s,len=%zu\n",s1,s2,len);
+//		if (argv[4][0] == '1')
+//		{
+//			result = ft_strncmp(s1,s2,len);
+//			printf("result=%d\n",result);
+//		}
+//		else
+//		{
+//			result = strncmp(s1,s2,len);
+//			printf("result=%d\n",result);
+//
+//		}
 //
 //	}
 //	return (0);

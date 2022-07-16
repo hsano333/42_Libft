@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 22:13:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 04:15:09 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 13:16:55 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,21 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	//while (s[i])
 	while ((*(s++)))
 		i++;
 	return (i);
 }
+//#include <string.h>
+//int main(int argc, char **argv)
+//{
+//
+//	if (argc == 2)
+//	{
+//		printf("s=%s\n",argv[1]);
+//		printf("my   len=%zu\n",ft_strlen((argv[1])));
+//		printf("test len=%zu\n",strlen((argv[1])));
+//		// setment error 
+//		//printf("test null my=%zu\n",ft_strlen(NULL));
+//		//printf("test null len=%zu\n",strlen(NULL));
+//	}
+//}

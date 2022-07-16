@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:37:44 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 06:11:36 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 18:56:57 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ char	*ft_strchr(const char *s, int c)
 //	char *p;
 //	char *q;
 //
-//	p = ft_strchr(test,'1');
-//	q = strchr(test,'1');
+//	p = ft_strchr(NULL,'1');
+//	q = strchr("NULL",'1');
 //	printf("%s\n",p);
 //	printf("%s\n",q);
 //
-//	p = ft_strchr(test,'0');
-//	q = strchr(test,'0');
+//	p = ft_strchr(test,0);
+//	q = strchr(test,0);
 //	printf("%s\n",q);
 //	printf("%s\n",p);
 //	return (0);

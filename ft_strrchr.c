@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 12:55:56 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 20:48:47 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 19:20:26 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	char		cc;
+	const char	*head;
 
-	i = ft_strlen(s);
-	s += i;
-	i += 1;
-	while (i--)
+	head = s;
+	s += ft_strlen(s) + 1;
+	cc = (char)c;
+	while (s-- != head)
 	{
-		if (*s == (char)c)
+		if (*s == cc)
 			return ((char *)s);
-		s--;
 	}
 	return (0);
 }
@@ -36,14 +36,14 @@ char	*ft_strrchr(const char *s, int c)
 //	char *p;
 //	char *q;
 //
-//	p = ft_strrchr(test,'a');
-//	q = strrchr(test,'a');
+//	p = ft_strrchr(NULL,'a');
+//	q = strrchr(NULL,'a');
 //	printf("%s\n",p);
 //	printf("%s\n",q);
 //
-//	p = ft_strrchr(test,'b');
-//	q = strrchr(test,'i');
-//	printf("%s\n",q);
+//	p = ft_strrchr(test,'g');
+//	q = strrchr(test,'g');
 //	printf("%s\n",p);
+//	printf("%s\n",q);
 //	return (0);
 //}

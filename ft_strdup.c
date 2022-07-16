@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 02:50:00 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 05:16:21 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 23:16:31 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ char	*ft_strdup(const char *s1)
 //	if (argc == 2)
 //	{
 //		s1 = argv[1];
+//		if (s1[0] == '\0')
+//			s1 = NULL;
 //		s2 = ft_strdup(s1);
 //		s3 = strdup(s1);
 //		printf("s1=%s,my=%s,test=%s\n",s1,s2,s3);
+//		free(s2);
+//		free(s3);
 //
 //	}
 //	return (0);

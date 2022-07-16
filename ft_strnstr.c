@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 20:22:30 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/16 22:50:43 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t	k;
 	size_t	len_n;
-	size_t	last;
-	size_t	tmp;
 
 	i = -1;
+	k = 0;
 	len_n = ft_strlen(needle);
-	last = ft_strlen(haystack);
-	tmp = len_n;
 	if (len_n == 0)
 		return ((char *)haystack);
-	if (len_n > last)
+	if (len_n > ft_strlen(haystack) || len_n > len)
 		return (NULL);
-	while (++i <= len - len_n)
+	while (++i < len)
 	{
-		if (haystack[i] == needle[0])
+		if (haystack[i] == needle[k])
+			k++;
+		else
 		{
-			if (last - i <= len_n)
-				tmp = last - i + 1;
-			if (!ft_strncmp(&haystack[i], needle, tmp))
-				return (&(((char *)haystack)[i]));
+			i -= k;
+			k = 0;
 		}
+		if (len_n == k)
+			return (&(((char *)haystack)[i - len_n + 1]));
 	}
 	return (NULL);
 }
@@ -55,8 +55,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 //		len = atoi(argv[3]);
 //		result = ft_strnstr(s1,s2,len);
 //		printf("s1=%s,s2=%s,len=%zu\n",s1,s2,len);
-//		printf("my=%s\n",result);
 //		result = strnstr(s1,s2,len);
+//		printf("my=  %s\n",result);
 //		printf("test=%s\n",result);
 //
 //	}
