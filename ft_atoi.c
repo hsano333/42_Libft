@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 22:42:24 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 22:58:04 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 02:21:41 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ static size_t	get_start_index(const char *str, int *minus)
 	return (i);
 }
 
-static unsigned long	ft_iterative_power(long nb, long power)
+static size_t	ft_iterative_power(long nb, long power)
 {
-	long	rval;
-	long	old;
+	size_t	rval;
+	size_t	old;
 
 	rval = (long)nb;
 	if (power < 0)
@@ -74,15 +74,22 @@ static unsigned long	ft_iterative_power(long nb, long power)
 	return (rval);
 }
 
+size_t	remove_zero(const char *str, size_t i)
+{
+	while (str[i] == '0')
+		(i)++;
+	return i;
+}
+
 int	ft_atoi(const char *str)
 {
-	int				minus;
-	size_t			len;
-	size_t			i;
-	unsigned long	sum;
-	unsigned long	a;
+	int		minus;
+	size_t	len;
+	size_t	i;
+	size_t	sum;
+	size_t	a;
 
-	i = get_start_index(str, &minus);
+	i =remove_zero(str, get_start_index(str, &minus));
 	sum = 0;
 	len = get_digit_len(str, i);
 	if (len == 0)
