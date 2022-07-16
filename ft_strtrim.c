@@ -6,115 +6,60 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 22:55:54 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 05:02:50 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-
-static size_t	count_word(const char *s1, \
-	   	const char *set, size_t begin, size_t last)
+static int	is_set(char c, const char *set)
 {
-	size_t	count;
 	size_t	i;
-	size_t	j;
-	size_t	len;
 
-	count = 0;
-	i = begin - 1;
-	j = 0;
-	len = ft_strlen(set);
-	while (++i <= last)
+	i = 0;
+	while (set[i])
 	{
-		if (s1[i] == set[j])
-			j++;
-		else if (j > 0)
-		{
-			i -= j;
-			j = 0;
-		}
-		if (len == j)
-		{
-			count++;
-			j = 0;
-		}
+		if (set[i] == c)
+			return (true);
+		i++;
 	}
-	return (i - begin - count * len);
+	return (false);
 }
 
-static void	get_index(const char *s1, \
-	   	const char *set, size_t *begin, size_t *last)
+void	get_p(const char *s1, const char *set, size_t *begin, size_t *last)
 {
-	size_t	set_len;
-	char	*tmp_p;
-
-	while ((s1[*begin] <= ' ' || s1[*begin] >= 0x7f) && s1[*begin] != '\0')
-		(*begin)++;
-	while ((s1[*last] <= ' ' || s1[*last] >= 0x7f) && *last > *begin)
-		(*last)--;
-	set_len = ft_strlen(set);
-	tmp_p = ft_strnstr(&(s1[*begin]), set, set_len);
-	while (tmp_p != NULL && tmp_p == &(s1[*begin]))
-	{
-		*begin += set_len;
-		tmp_p = ft_strnstr(&(s1[*begin]), set, set_len);
-	}
-}
-
-static char	*get_p(const char *s1, const char *set, size_t *begin, size_t *last)
-{
-	char	*p;
-	size_t	len;
-
 	*begin = 0;
 	*last = ft_strlen(s1);
-	get_index(s1, set, begin, last);
-	len = count_word(s1, set, *begin, *last);
-	p = malloc(len + 1);
-	if (p == NULL)
-	{
-		*begin = *last;
-		return (NULL);
-	}
-	p[len] = '\0';
-	return (p);
+	while (is_set(s1[*begin], set) && s1[*begin])
+		(*begin)++;
+	while (is_set(s1[*last - 1], set) && *last >= *begin)
+		(*last)--;
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
-	size_t	i;
 	size_t	b;
 	size_t	l;
-	char	*tmp_p;
 
 	if (s1 == NULL)
 		return (NULL);
-	p = get_p(s1, set, &b, &l);
-	if (l == b || p == NULL)
-		return (p);
-	i = 0;
-	tmp_p = ft_strnstr(&(s1[b]), set, l - b + 1);
-	while (tmp_p != NULL)
-	{
-		while (&(s1[b]) != tmp_p)
-			p[i++] = s1[b++];
-		b += ft_strlen(set);
-		tmp_p = ft_strnstr(&(s1[b]), set, l - b + 1);
-	}
-	while (b <= l)
-		p[i++] = s1[b++];
-	return (p);
+	if (ft_strlen(set) == 0 || set == NULL)
+		return (ft_strdup(s1));
+	get_p(s1, set, &b, &l);
+	if (l < b)
+		return (ft_strdup(""));
+	return (ft_substr(s1, (unsigned int)b, (unsigned int)(l - b)));
 }
 //int main(int argc, char **argv)
 //{
 //
 //	char *p;
+//	size_t	tst;
+//
+//	tst = sizeof(size_t);
+//	printf("tst=%zu/n",tst);
+//	p = ft_strtrim("hello world", "");
+//	printf("p=%s\n",p);
 //	if (argc == 3)
 //	{
 //		/*
