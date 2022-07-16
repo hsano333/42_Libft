@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:38:37 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 22:11:20 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 03:03:42 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (!del || !lst)
 		return ;
-	if (!(*del))
-	{
-		*lst = NULL;
-		return ;
-	}
 	tmp = *lst;
 	while (tmp->next)
 	{
