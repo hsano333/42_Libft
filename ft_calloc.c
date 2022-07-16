@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:07:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 23:11:02 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 01:55:29 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*p;
 
 	max = count * size;
+	if (max >= ULONG_MAX)
+		return (NULL);
 	p = (char *)malloc(max);
 	if (!p)
 		return (NULL);

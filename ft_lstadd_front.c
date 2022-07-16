@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:32:21 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 13:06:17 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 00:52:36 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst == NULL)
+	if (lst == NULL || new == NULL)
 		return ;
-	(*lst) = new;
+	*lst = new;
 }
