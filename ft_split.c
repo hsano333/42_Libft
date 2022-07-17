@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 12:58:17 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/17 23:30:17 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 00:24:30 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static char	**last_check(char **p, int error, size_t j)
 			free(p[i]);
 			i++;
 		}
+		free(p);
 	}
 	return (p);
 }
