@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:36:40 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 14:36:27 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 01:22:08 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (lst == NULL)
+	if (lst == NULL || new == NULL)
 		return ;
-	if (*lst == NULL)
+	if (lst[0] == NULL)
 	{
-		*lst = new;
+		lst[0] = new;
 		return ;
 	}
 	last = ft_lstlast(*lst);
