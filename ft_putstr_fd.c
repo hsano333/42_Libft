@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 13:23:11 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/14 23:51:21 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 00:57:47 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,15 @@ void	ft_putstr_fd(char *s, int fd)
 	len = ft_strlen(s);
 	write(fd, s, len);
 }
+//#include <stdlib.h>
+//int main(int argc, char **argv)
+//{
+//	char *c;
+//	int	fd;
+//	if (argc == 3)
+//	{
+//		c = argv[1];
+//		fd = atoi(argv[2]);
+//		ft_putstr_fd(c, fd);
+//	}
+//}

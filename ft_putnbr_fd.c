@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 23:51:46 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/15 00:12:38 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 01:03:40 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static size_t	get_count(char *p, int n)
 	return (cnt);
 }
 
-void	ft_itoa_no_memory(int n, char *p, char *r)
+static void	ft_itoa_no_memory(int n, char *p, char *r)
 {
 	size_t	i;
 	size_t	cnt;
@@ -67,3 +67,15 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_itoa_no_memory(n, &(p[0]), &(r[0]));
 	ft_putstr_fd(r, fd);
 }
+//#include <stdlib.h>
+//int main(int argc, char **argv)
+//{
+//	int c;
+//	int	fd;
+//	if (argc == 3)
+//	{
+//		c = atoi(argv[1]);
+//		fd = atoi(argv[2]);
+//		ft_putnbr_fd(c, fd);
+//	}
+//}
