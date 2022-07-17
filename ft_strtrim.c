@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:36:03 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/17 05:02:50 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/17 20:29:17 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	b;
 	size_t	l;
 
-	if (s1 == NULL)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-	if (ft_strlen(set) == 0 || set == NULL)
+	if (ft_strlen(set) == 0)
 		return (ft_strdup(s1));
 	get_p(s1, set, &b, &l);
 	if (l < b)
