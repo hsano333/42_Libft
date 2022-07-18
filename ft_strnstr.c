@@ -6,13 +6,13 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:37:16 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 22:50:43 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:58:25 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+static char	*process(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	k;
@@ -39,6 +39,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	if (len == 0)
+	{
+		if (needle == NULL || needle[0] == '\0')
+			return ((char *)haystack);
+		return (NULL);
+	}
+	return (process(haystack, needle, len));
+}
 //#include <stdio.h>
 //#include <string.h>
 //#include <stdlib.h>
@@ -48,6 +59,18 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 //	char *s2;
 //	char *result;
 //	size_t		len;
+//	printf("test start\n");
+//	result = strnstr("oh no not the empty string !", "", 0);
+//	printf("origin result=%s\n",result);
+//	result = ft_strnstr("oh no not the empty string !", "", 0);
+//	printf("my result=%s\n",result);
+//
+//	printf("test2 start\n");
+//	result = strnstr("oh no not the empty string !", "z", 0);
+//	printf("origin result=%s\n",result);
+//	result = ft_strnstr("oh no not the empty string !", "z", 0);
+//	printf("my result=%s\n",result);
+//
 //	if (argc == 4)
 //	{
 //		s1 = argv[1];

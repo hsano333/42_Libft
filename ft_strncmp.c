@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 13:46:01 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 19:31:02 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:54:46 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	*us1;
 	unsigned char	*us2;
 
+	if (n == 0)
+		return (0);
 	us1 = (unsigned char *)s1;
 	us2 = (unsigned char *)s2;
 	i = 0;
@@ -40,6 +42,22 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 //	char *s2;
 //	int 	result;
 //	size_t		len;
+//
+//	printf("test1 \n");
+//	//strncmp("hello", NULL, 3);
+//	printf("test2 \n");
+//	//strncmp(NULL, "hello", 3);
+//	printf("test3 \n");
+//	strncmp(NULL, NULL, 3);
+//
+//
+//	printf("test1 \n");
+//	ft_strncmp("hello", NULL, 0);
+//	printf("test2 \n");
+//	ft_strncmp(NULL, "hello", 0);
+//	printf("test3 \n");
+//	ft_strncmp(NULL, NULL, 0);
+//
 //	if (argc == 4)
 //	{
 //		s1 = argv[1];

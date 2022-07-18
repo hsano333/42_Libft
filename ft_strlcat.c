@@ -6,7 +6,7 @@
 /*   By: hsano </var/mail/hsano>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 01:07:54 by hsano             #+#    #+#             */
-/*   Updated: 2022/07/16 18:46:50 by hsano            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:23:22 by hsano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_s;
 	char	*p;
 
+	if (dstsize == 0)
+	{
+		if (src == NULL)
+			return (0);
+		return (dstsize + ft_strlen(src));
+	}
 	len_d = ft_strlen(dst);
 	len_s = ft_strlen(src);
 	if (len_d >= dstsize)
@@ -38,6 +44,40 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 //	size_t o1;
 //	size_t o2;
 //	size_t		len;
+//
+//	//char *dst1 = calloc(100, sizeof(char));
+//	//char *dst2 = calloc(100, sizeof(char));
+//	char *src1 = calloc(100, sizeof(char));
+//	char *src2 = calloc(100, sizeof(char));
+//	for (int i = 0; i < 99; i++)
+//	{
+//		src1[i] = i + 1;
+//		src2[i] = i + 1;
+//	}
+//	/*
+//	printf("test start No.1\n");
+//	len = ft_strlcat(NULL, "", 0);
+//	printf("test start No.2\n");
+//	printf("test result=%zu\n",len);
+//	len = ft_strlcat(dst1, "", 100);
+//	printf("test result=%zu\n",len);
+//	*/
+//	len = strlcat(NULL, src1, 0);
+//	printf("test result=%zu\n",len);
+//	len = ft_strlcat(NULL, src1, 0);
+//	printf("test result=%zu\n",len);
+//
+//	/*
+//	printf("test start No.4\n");
+//	len = strlcat(NULL, "", 0);
+//	printf("test result=%zu\n",len);
+//	printf("test start No.5\n");
+//	len = strlcat(dst2, "", 100);
+//	printf("test result=%zu\n",len);
+//	*/
+//	printf("test start No.6\n");
+//	len = strlcat(NULL, src1, 0);
+//	printf("test result=%zu\n",len);
 //	if (argc == 6)
 //	{
 //		s2 = argv[2];
